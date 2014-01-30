@@ -1,13 +1,13 @@
 <?php
 /**
  * @package Wedgies_Shortcode
- * @version 0.2
+ * @version 1.0
  */
 /*
 Plugin Name: Wedgies Shortcode
 Plugin URI: http://wedgies.com
-Description: Support for a <a href="http://wedgies.com">Wedgies</a> Wordpress shortcode.  Use [wedgie id="5164b8cc9688ec020000000a"] to embed any wedgie into post content.
-Version: 0.2
+Description: Wedgies are polls you can embed on your Wordpress page. Engage your audience by asking them a question via Wedgies.
+Version: 1.0
 Author: Brendan Nee
 Author URI: http://bn.ee
 */
@@ -34,9 +34,10 @@ add_shortcode("wedgie", "wedgie_handler");
 
 function wedgie_handler($attrs) {
   $attrs = shortcode_atts(array(
-    "id" => "5164b8cc9688ec020000000a"
+    "id" => "52dc9862da36f6020000000c"
   ), $attrs);
-  $wedgie_output = '<script src="http://www.wedgies.com/js/public_embed/v1/embed.min.js"></script><div class="wedgies-embed" style="height: 400px; width: 400px;" data-wedgie-id="'  . $attrs['id'] . '"></div>';
+  $wedgie_output = '<script src="https://www.wedgies.com/js/widgets.js"></script><noscript><a href="https://www.wedgies.com/question/' . $attrs['id'] . '">Vote on our poll!</a></noscript><div class="wedgie-widget" wd-pending wd-type="embed" wd-version="v1" id="' . $attrs['id'] . '" style="max-width: 720px;"></div>';
   return $wedgie_output;
 }
+
 ?>
