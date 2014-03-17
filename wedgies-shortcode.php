@@ -7,8 +7,10 @@
 Plugin Name: Social Polls by Wedgies.com 
 Plugin URI: http://wedgies.com
 Description: Wedgies are polls you can embed on your Wordpress page. Engage your audience by asking them a question via Wedgies.
+Version: 1.2
 Author: Brendan Nee, James Barcellano
 Author URI: http://bn.ee
+License: GPL3
 */
 /*
 Wedgies (Wordpress Plugin)
