@@ -1,4 +1,4 @@
-# [![wedgies.com](https://www.wedgies.com/img/logo_blue.png)](http://wedgies.com/) Wordpress Shortcode Plugin
+# [![wedgies.com](https://www.wedgies.com/img/logo_blue.png)](http://wedgies.com/) Wordpress Polling Plugin
 
 This plugin makes it easy to embed a wedgie into the content of a post or page using a URL.
 
