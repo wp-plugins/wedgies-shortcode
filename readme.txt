@@ -4,7 +4,7 @@ Donate link: http://wedgies.com
 Tags: survey, shortcode, poll
 Requires at least: 2.5
 Tested up to: 3.8
-Stable tag: 1.3
+Stable tag: 1.3.1
 
 Wedgies are polls you can embed on your Wordpress page. Engage your audience by asking them a question via Wedgies.
 
