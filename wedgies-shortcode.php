@@ -1,35 +1,33 @@
 <?php
 /**
- * @package Wedgies_Shortcode
- * @version 1.3
+ * Plugin Name: Social Polls by Wedgies.com
+ * Plugin URI:  http://wedgies.com
+ * Description: Wedgies are polls you can embed on your WordPress page. Engage your audience by asking them a question via Wedgies.
+ * Version:     1.3.1
+ * Author:      Brendan Nee, James Barcellano
+ * Author URI:  http://bn.ee
+ * License:     GPL3
+ *
+ * Wedgies (WordPress Plugin)
+ *
+ * @package   Wedgies_Shortcode
+ * @version   1.3.1
+ * @copyright Copyright (C) 2013 Wedgies
+ * @link      http://wedgies.com
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-/*
-Plugin Name: Social Polls by Wedgies.com
-Plugin URI: http://wedgies.com
-Description: Wedgies are polls you can embed on your WordPress page. Engage your audience by asking them a question via Wedgies.
-Version: 1.3
-Author: Brendan Nee, James Barcellano
-Author URI: http://bn.ee
-License: GPL3
-*/
-/*
-Wedgies (WordPress Plugin)
-Copyright (C) 2013 Wedgies
-Contact me at http://wedgies.com
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-*/
 
 class Wedgie_Shortcode_Plugin {
 
@@ -54,17 +52,27 @@ class Wedgie_Shortcode_Plugin {
 	 * Add hooks
 	 */
 	protected function __construct() {
+		add_action( 'wp_enqueue_scripts',    array( $this, 'enqueue_script' ) );
 		add_shortcode( self::SHORTCODE_SLUG, array( $this, 'shortcode_handler' ) );
-		wp_embed_register_handler( 'wedgie', '#http(s?)://(www\.)?wedgies\.com/question/(.*)#i', array( $this, 'wp_embed_handler' ), 1 );
-		add_action( 'the_posts', array( $this, 'conditionally_enqueue_script' ) );
-
+		wp_embed_register_handler(
+			'wedgie',
+			'#http(s?)://(www\.)?wedgies\.com/question/(.*)#i',
+			array( $this, 'wp_embed_handler' ),
+			1
+		);
 	}
 
 	/**
 	 * wp_enqueue_scripts hook.
 	 */
 	public function enqueue_script() {
-		wp_enqueue_script( 'wedgie_embed', 'https://www.wedgies.com/js/widgets.js', null, '1.2' );
+		wp_register_script(
+			'wedgie_embed',
+			'https://www.wedgies.com/js/widgets.js',
+			array(),
+			'1.2',
+			true
+		);
 	}
 
 	/**
@@ -91,6 +99,8 @@ class Wedgie_Shortcode_Plugin {
 	 * @return string
 	 */
 	function shortcode_handler( $attrs ) {
+		wp_enqueue_script( 'wedgie_embed' );
+
 		$attrs = shortcode_atts(
 			array(
 				'id' => '52dc9862da36f6020000000c',
@@ -98,8 +108,8 @@ class Wedgie_Shortcode_Plugin {
 			$attrs,
 			self::SHORTCODE_SLUG
 		);
-		$wedgie_output = $this->construct_embed( $attrs['id'] );
-		return $wedgie_output;
+
+		return $this->construct_embed( $attrs['id'] );
 	}
 
 	/**
@@ -113,37 +123,16 @@ class Wedgie_Shortcode_Plugin {
 	 * @return mixed|void
 	 */
 	function wp_embed_handler( $matches, $attr, $url, $rawattr ) {
-		$embed = $this->construct_embed( $matches[3] );
-		return apply_filters( 'embed_wedgie', $embed, $matches, $attr, $url, $rawattr );
-	}
+		wp_enqueue_script( 'wedgie_embed' );
 
-
-	/**
-	 * Hook handler for the_posts to enqueue the JS if a wedgie is found.
-	 *
-	 * @param array $posts
-	 *
-	 * @return mixed
-	 */
-	function conditionally_enqueue_script( $posts ) {
-		if ( empty( $posts ) ) {
-			return $posts;
-		}
-
-		$shortcode_found = false;
-
-		foreach ( $posts as $post ) {
-			if ( ! ( false === stripos( $post->post_content, '[' . self::SHORTCODE_SLUG ) ) || preg_match( '#http(s?)://(www\.)?wedgies\.com/question/(.*)#i', $post->post_content ) ) {
-				$shortcode_found = true;
-				break;
-			}
-		}
-
-		if ( $shortcode_found ) {
-			add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_script' ) );
-		}
-
-		return $posts;
+		return apply_filters(
+			'embed_wedgie',
+			$this->construct_embed( $matches[3] ),
+			$matches,
+			$attr,
+			$url,
+			$rawattr
+		);
 	}
 
 }
