@@ -4,7 +4,7 @@ Donate link: https://www.wedgies.com
 Tags: poll, polling, polls, social poll, survey, vote, voting, create poll, poll plugin, wordpress poll, vote widget
 Requires at least: 2.5
 Tested up to: 4.2.2
-Stable tag: 1.3.3
+Stable tag: 1.3.4
 
 Wedgies are polls that you can embed in your WordPress site and templates.
 
