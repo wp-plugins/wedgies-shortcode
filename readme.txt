@@ -1,42 +1,71 @@
 === Social Polls by Wedgies.com ===
-Contributors: Wedgies, Michael Keating, James Barcellano
-Donate link: http://wedgies.com
-Tags: survey, shortcode, poll
+Contributors: Wedgies, jimmyjacobson
+Donate link: https://www.wedgies.com
+Tags: poll, polling, polls, social poll, survey, vote, voting, create poll, poll plugin, wordpress poll, vote widget
 Requires at least: 2.5
-Tested up to: 3.8
-Stable tag: 1.3.1
+Tested up to: 4.2.2
+Stable tag: 1.3.4
 
-Wedgies are polls you can embed on your Wordpress page. Engage your audience by asking them a question via Wedgies.
+Wedgies are polls that you can embed in your WordPress site and templates.
 
 == Description ==
 
-The Wedgies social polling WordPress plug-in allows you to easily add social polls to your Wordpress site, post, or page.
+Wedgies are polls that you can embed in your WordPress site and templates.  Wedgies polls are beautiful, responsive, and realtime which makes collecting vote information from your visitors is easy and frictionless.
 
-Social polls are a great way to engage site visitors and are proven as one of the best ways to create engagement.
+Wedgies WordPress plugin makes it simple to include a poll in a page by simple pasting a URL into a post and a responsive poll will load in that space.
 
-On average, 1 in 5 readers will vote on a poll, 1 in 6 voters will share their poll results to social media, which creates 20% more site traffic for the publisher of the poll.
+= Poll Features: =
 
-We're always happy to get you setup and started, for questions email - info@wedgies.com
+* Create polls from a dashboard on wedgies.com
+* Ability to create white label polls without wedgies.com branding
+* Manage your polls, analytics and voters from one dashboard
+* Poll visitors anonymously through click-to-vote polls
+* Obtain voter information in the poll analytics dashboard
+* Enable your voters to share their votes to social networks, which will drive social traffic to your site and poll
+* Customize the look and feel of the poll including colors, css, and branding
+* Customize the data shown on the poll like: total results, private results, percentages
+* Include media in your poll like pictures and animated GIFs
 
-This plugin makes it easy to embed a [wedgie](http://wedgies.com) into the content of a post or page using a URL.
-
-`http://www.wedgies.com/question/5164b8cc9688ec020000000a`
+We're always happy to help you get started or answer questions, just email us at info@wedgies.com
 
 == Installation ==
 
 1. Install the Wedgies Social Polling plugin.
 2. Activate it through the "Plugins" menu in WordPress
 3. Edit the post or page where you'd like to insert an embedded wedgie.
-4. You can embed a wedgie one of two ways:
-    1. Paste the url of a wedgie in the post: http://www.wedgies.com/question/52dc9862da36f6020000000c
-    2. Paste the short code `[wedgie id="WEDGIE-ID-HERE"]` where you'd like the embedded wedgie to appear. You can get the ID of your wedgie from the URL of the page when you create a wedgie. For instance, the ID of [this wedgie](http://www.wedgies.com/results/question/52dc9862da36f6020000000c) is "52dc9862da36f6020000000c".
+4. Paste the url of a wedgie in the post: https://www.wedgies.com/question/52dc9862da36f6020000000c
+
+== Frequently Asked Questions ==
+
+**Do I need to register on Wedgies.com to use this plugin?**
+You need to create an accoun here to create and embed polls on your Wordpress site. https://www.wedgies.com/register
+
+= How do I add a poll to my post or template? =
+1. Create a new poll on wedgies.com
+2. Once you've created the poll click the share to WordPress button
+3. Copy the WordPress short code and paste it into your post or site
+
+= What types of online polls do you support? =
+We support 2-25 option questions and questions that include rich media.
 
 == Screenshots ==
 
-1. A Wedgies poll, embed into a wordpress post.
-2. Responsive width in an aside.
+1. 2015 State of the Union Livestream page using Wedgies Polls 
+2. A Wedgies poll, embed into a wordpress post.
+3. A Wedgies poll, embedded into the Las Vegas Review Journal
+4. Responsive width in an aside.
 
 == Changelog ==
+
+= 1.3.3 =
+Updates to Plugin Page
+
+= 1.3.2 =
+Updates to Plugin Page
+
+= 1.3.1 =
+
+Updates to Plugin Page for Wordpress Plugin Store
 
 = 1.3 =
 

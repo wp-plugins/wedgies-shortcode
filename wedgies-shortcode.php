@@ -3,17 +3,17 @@
  * Plugin Name: Social Polls by Wedgies.com
  * Plugin URI:  http://wedgies.com
  * Description: Wedgies are polls you can embed on your WordPress page. Engage your audience by asking them a question via Wedgies.
- * Version:     1.3.1
- * Author:      Brendan Nee, James Barcellano
- * Author URI:  http://bn.ee
+ * Version:     1.3.4
+ * Author:      Jimmy Jacobson, Brendan Nee, James Barcellano
+ * Author URI:  https://www.wedgies.com
  * License:     GPL3
  *
  * Wedgies (WordPress Plugin)
  *
  * @package   Wedgies_Shortcode
- * @version   1.3.1
+ * @version   1.3.4
  * @copyright Copyright (C) 2013 Wedgies
- * @link      http://wedgies.com
+ * @link      https://www.wedgies.com
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
