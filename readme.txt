@@ -14,7 +14,8 @@ Wedgies are polls that you can embed in your WordPress site and templates.  Wedg
 
 Wedgies WordPress plugin makes it simple to include a poll in a page by simple pasting a URL into a post and a responsive poll will load in that space.
 
-Key features:
+== Poll Features: ==
+
 * Create polls from a dashboard on wedgies.com
 * Ability to create white label polls without wedgies.com branding
 * Manage your polls, analytics and voters from one dashboard
@@ -27,7 +28,7 @@ Key features:
 
 We're always happy to help you get started or answer questions, just email us at info@wedgies.com
 
-== Installation ==
+= Installation =
 
 1. Install the Wedgies Social Polling plugin.
 2. Activate it through the "Plugins" menu in WordPress
@@ -55,6 +56,9 @@ We support 2-25 option questions and questions that include rich media.
 4. Responsive width in an aside.
 
 == Changelog ==
+
+= 1.3.2 =
+Updates to Plugin Page
 
 = 1.3.1 =
 
